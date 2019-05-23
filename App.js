@@ -15,7 +15,7 @@ export default class App extends React.Component {
 
   loadAssets = async() => {
     // throw new Error("Im hungry")
-    await FontAwesome.loadAsync({
+    await Font.loadAsync({
       ...Ionicons.font
     });
   };
@@ -23,14 +23,14 @@ export default class App extends React.Component {
   render() {
     const {loaded}  = this.state;
     if(loaded) {
-      return
-        <TabNavigation/>;
+      return <TabNavigation/>;
     }else{
       return (
         <AppLoading 
           startAsync={this.loadAssets}
           onFinish={this.handleLoaded} 
-          onError={this.handleError}/>
+          onError={this.handleError}
+        />
       );
     }
   }
