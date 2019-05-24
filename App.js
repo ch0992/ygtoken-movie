@@ -1,7 +1,7 @@
 import React from 'react';
 import {AppLoading, Font} from "expo";
 import {Ionicons} from "@expo/vector-icons";
-import TabNavigation from "./navigation/TabNavigation"
+import MainNavigation from "./navigation/MainNavigation";
 
 export default class App extends React.Component {
 
@@ -14,16 +14,14 @@ export default class App extends React.Component {
   handleLoaded = () => this.setState({loaded : true});
 
   loadAssets = async() => {
-    // throw new Error("Im hungry")
     await Font.loadAsync({
       ...Ionicons.font
     });
   };
-
   render() {
     const {loaded}  = this.state;
     if(loaded) {
-      return <TabNavigation/>;
+      return <MainNavigation />;
     }else{
       return (
         <AppLoading 

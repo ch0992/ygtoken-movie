@@ -13,7 +13,7 @@ const TabNavigation = createBottomTabNavigator(
         Movie :{
             screen : MoviesScreen,
             navigationOptions : {
-                TabBarIcon: ({focused}) => (
+                tabBarIcon: ({focused}) => (
                     <TabBarIcon
                         focused={focused}
                         name={Platform.OS === "ios" ? "ios-film" : "md-film"}
@@ -24,10 +24,10 @@ const TabNavigation = createBottomTabNavigator(
         TV :{
             screen : TVScreen,
             navigationOptions : {
-                TabBarIcon : ({focused}) => (
+                tabBarIcon : ({focused}) => (
                     <TabBarIcon
                         focused={focused}
-                        name={Platform.OS === "ios" ? "ios-film" : "md-film"}
+                        name={Platform.OS === "ios" ? "ios-tv" : "md-tv"}
                     />
                 )
             }
@@ -35,10 +35,10 @@ const TabNavigation = createBottomTabNavigator(
         Search : {
             screen : SearchScreen,
             navigationOptions : {
-                TabBarIcon : ({focused}) => (
+                tabBarIcon : ({focused}) => (
                     <TabBarIcon
                         focused = {focused}
-                        name={Platform.OS === "ios" ? "ios-film" : "md-film"}
+                        name={Platform.OS === "ios" ? "ios-search" : "md-search"}
                     />
                 )
             }
